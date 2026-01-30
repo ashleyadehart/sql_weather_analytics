@@ -11,7 +11,6 @@ The project follows a **staging → dimension → fact** pipeline and includes r
 ## Project Structure
 
 sql-weather-analytics/
-│
 ├── data/
 │   └── raw/
 │       └── meteostat_KM210_daily.csv
