@@ -9,7 +9,6 @@ The project follows a **staging → dimension → fact** pipeline and includes r
 ---
 
 ## Project Structure
-
 sql-weather-analytics/
 ├── data/
 │   └── raw/
@@ -37,7 +36,6 @@ sql-weather-analytics/
 The database follows a **star schema** optimized for analytical workloads.
 
 ### Tables
-
 - **stg_daily_weather_raw**  
   Raw staging table used to ingest daily CSV weather data with minimal transformation.
 
@@ -51,14 +49,12 @@ The database follows a **star schema** optimized for analytical workloads.
   Fact table containing daily temperature and precipitation measurements.
 
 ### Views
-
 - **vw_daily_weather_summary**  
   A reusable reporting view joining the fact table with date and station dimensions to simplify analysis.
 
 ---
 
 ## Data Pipeline
-
 1. Raw CSV weather data is imported into a staging table.
 2. Data quality checks validate row counts, duplicates, and missing values.
 3. Dimension tables (`dim_station`, `dim_date`) are populated from staging data.
