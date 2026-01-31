@@ -10,17 +10,18 @@ The project follows a **staging → dimension → fact** pipeline and includes r
 
 ## Project Structure
 *   /data
-    *   /raw
-        *   meteostat_KM210_daily.csv
+    * /raw
+      * meteostat_KM210_daily.csv
+    * /processed
 *   /schema
-    *   00_create_staging.sql
-    *   01_create_tables.sql
-    *   02_constraints_indexes.sql
+    * 00_create_staging.sql
+    * 01_create_tables.sql
+    * 02_constraints_indexes.sql
 *   /sql
-    *   00_data_quality_checks.sql
-    *   01_transformations.sql
-    *   02_analysis.sql
-    *   03_views.sql
+    * 00_data_quality_checks.sql
+    * 01_transformations.sql
+    * 02_analysis.sql
+    * 03_views.sql
 *   /outputs
 *   weather.db
 *   README.md
