@@ -13,6 +13,7 @@ The project follows a **staging → dimension → fact** pipeline and includes r
     * /raw
       * meteostat_KM210_daily.csv
     * /processed
+      * daily_weather_summary.csv
 *   /schema
     * 00_create_staging.sql
     * 01_create_tables.sql
