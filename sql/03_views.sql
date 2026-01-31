@@ -1,13 +1,11 @@
-CREATE VIEW IF NOT EXISTS vw_daily_weather_summary AS
+DROP VIEW IF EXISTS vw_daily_weather_summary;
+
+CREATE VIEW vw_daily_weather_summary AS
 SELECT
-  f.date_id,
-  d.year,
-  d.month,
-  d.season,
-  f.tavg_c,
-  f.tmin_c,
-  f.tmax_c,
-  f.prcp_mm,
-  f.snow_mm
-FROM fact_daily_weather f
-JOIN dim_date d ON f.date_id = d.date_id;
+  date_id      AS date,
+  tavg_c       AS tavg,
+  tmin_c       AS tmin,
+  tmax_c       AS tmax,
+  prcp_mm      AS precipitation_mm,
+  snow_mm      AS snow_mm
+FROM fact_daily_weather;
