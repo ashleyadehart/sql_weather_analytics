@@ -9,23 +9,27 @@ The project follows a **staging → dimension → fact** pipeline and includes r
 ---
 
 ## Project Structure
-*   /data
-    * /raw
-      * meteostat_KM210_daily.csv
-    * /processed
-      * daily_weather_summary.csv
-*   /schema
-    * 00_create_staging.sql
-    * 01_create_tables.sql
-    * 02_constraints_indexes.sql
-*   /sql
-    * 00_data_quality_checks.sql
-    * 01_transformations.sql
-    * 02_analysis.sql
-    * 03_views.sql
-*   /outputs
-*   weather.db
-*   README.md
+```
+sql_weather_analytics/
+├─ data/
+│  ├─ raw/
+│  │  └─ meteostat_KM210_daily.csv      # Raw daily weather data
+│  └─ processed/
+│     └─ daily_weather_summary.csv      # Cleaned & aggregated output
+├─ schema/
+│  ├─ 00_create_staging.sql             # Staging tables
+│  ├─ 01_create_tables.sql              # Dimension & fact tables
+│  └─ 02_constraints_indexes.sql        # Keys and indexes
+├─ sql/
+│  ├─ 00_data_quality_checks.sql        # Validation queries
+│  ├─ 01_transformations.sql            # ETL transformations
+│  ├─ 02_analysis.sql                   # Analytical queries
+│  └─ 03_views.sql                      # Analytical views
+├─ outputs/
+│  └─ (exported reports & summaries)
+├─ weather.db                           # SQLite database
+└─ README.md
+```
 
 ---
 
@@ -70,8 +74,8 @@ This project includes analytical queries such as:
 - Reusable reporting views for downstream analysis
 
 ### Example Query: 7-Day Rolling Average Temperature
-
-```sql
+```
+sql
 SELECT
   date_id,
   tavg_c,
@@ -80,3 +84,4 @@ SELECT
     ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
   ) AS rolling_7d_avg_c
 FROM fact_daily_weather;
+```
