@@ -27,8 +27,9 @@ sql_weather_analytics/
 │  └─ 03_views.sql                      # Analytical views
 ├─ outputs/
 │  └─ (exported reports & summaries)
-├─ weather.db                           # SQLite database
 └─ README.md
+├─ weather.db                           # SQLite database
+├─ weather.sqbpro
 ```
 
 ---
