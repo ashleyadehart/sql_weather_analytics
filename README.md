@@ -76,7 +76,6 @@ This project includes analytical queries such as:
 
 ### Example Query: 7-Day Rolling Average Temperature
 ```
-sql
 SELECT
   date_id,
   tavg_c,
